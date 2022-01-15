@@ -5,6 +5,7 @@ class Game{
         this.player = new Player();
         this.enemies = [];
         this.projectiles = [];
+        this.player = new Player();
     }
 
     draw() {
@@ -19,6 +20,7 @@ class Game{
         for(proj in this.projectiles) {
             proj.draw();
         }
+        this.player.draw();
     }
 
     update() {
@@ -27,9 +29,10 @@ class Game{
             enemy.update();
         }
         for(proj in this.projectiles) {
-            proj.draw();
+            proj.update();
         }
-
+        this.player.update();
+        this.player.move();
     }
 
     drawBackground() {
@@ -50,10 +53,10 @@ class Game{
     }
 
     keyPressed(w, a, s, d) {
-
+        this.player.pressed(w, a, s, d);
     }
 
     keyReleased(w, a, s, d) {
-
+        this.player.released(w, a, s, d);
     }
 }
