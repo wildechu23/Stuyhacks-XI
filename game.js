@@ -2,29 +2,29 @@ class Game{
     constructor() {
         this.isRunning = true;
         this.pause = false;
-        this.player = new Player();
+        // this.player = new Player();
         this.enemies = [];
         this.projectiles = [];
     }
 
     draw() {
-        this.player.draw();
+        // this.player.draw();
 
-        for(enemy in enemies) {
+        for(enemy in this.enemies) {
             enemy.draw();
         }
 
-        for(proj in projectiles) {
+        for(proj in this.projectiles) {
             proj.draw();
         }
     }
 
     update() {
-        this.player.update();
-        for(enemy in enemies) {
+        // this.player.update();
+        for(enemy in this.enemies) {
             enemy.update();
         }
-        for(proj in projectiles) {
+        for(proj in this.projectiles) {
             proj.draw();
         }
 
@@ -34,7 +34,19 @@ class Game{
         return this.isRunning;
     }
 
-    click() {
+    get paused() {
+        return this.pause;
+    }
+
+    click(x, y) {
+
+    }
+
+    keyPressed(w, a, s, d) {
+
+    }
+
+    keyReleased(w, a, s, d) {
 
     }
 }
