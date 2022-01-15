@@ -13,8 +13,8 @@
     this.hearts = 10;
     this.tint = false;
     this.attackCD = 0.5;
-    this.time = System.currentTimeMillis() / 1000 - 1;
-    this.time2 = System.currentTimeMillis();
+    this.time = Date.now() / 1000 - 1;
+    this.time2 = Date.now();
     this.time3 = System.currentTimeMillis() - 300;
     this.size = 64;
     }
@@ -67,7 +67,7 @@
     }
     
     draw() {
-      if (this.tint == true && System.currentTimeMillis() - this.time2 <= 500) {
+      if (this.tint == true && Date.now() - this.time2 <= 500) {
         tint(0, 153, 100, 100);
       }
       else {
