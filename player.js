@@ -15,7 +15,6 @@
     this.attackCD = 0.5;
     this.time = Date.now() / 1000 - 1;
     this.time2 = Date.now();
-    this.time3 = System.currentTimeMillis() - 300;
     this.size = 64;
     }
     
