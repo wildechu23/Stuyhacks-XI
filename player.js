@@ -1,7 +1,7 @@
  class Player{
     constructor() {
     this.damage = 1;
-    this.animation = loadImage("pawn.bmp");
+    this.animation = loadImage("pawn.png");
     this.normal = 1;
     this.spriteNum = 0;
     this.speed = 8;
