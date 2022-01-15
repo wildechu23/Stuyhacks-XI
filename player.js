@@ -1,7 +1,7 @@
  class Player{
     constructor() {
     this.damage = 1;
-    this.animation = loadImage();
+    this.animation = loadImage("pawn.bmp");
     this.normal = 1;
     this.spriteNum = 0;
     this.speed = 8;
@@ -19,8 +19,8 @@
     }
     
     move() {
-      canMovex = true;
-      canMovey = true;/*
+      let canMovex = true;
+      let canMovey = true;/*
       for (i = 0; i < floor.cRoom.rocks.size(); i++) {
         //else {
           if (floor.cRoom.rocks.get(i).isColliding(this)[0] == 0) {
