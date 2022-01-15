@@ -2,13 +2,15 @@ class Game{
     constructor() {
         this.isRunning = true;
         this.pause = false;
-        // this.player = new Player();
+        this.player = new Player();
         this.enemies = [];
         this.projectiles = [];
     }
 
     draw() {
-        // this.player.draw();
+        this.drawBackground();
+
+        this.player.draw();
 
         for(enemy in this.enemies) {
             enemy.draw();
@@ -20,7 +22,7 @@ class Game{
     }
 
     update() {
-        // this.player.update();
+        this.player.update();
         for(enemy in this.enemies) {
             enemy.update();
         }
@@ -28,6 +30,11 @@ class Game{
             proj.draw();
         }
 
+    }
+
+    drawBackground() {
+        fill(166, 225, 255);
+        rect(0,0,windowWidth,windowHeight*0.75);
     }
 
     get running() {
