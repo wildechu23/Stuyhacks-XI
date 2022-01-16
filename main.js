@@ -6,6 +6,8 @@ function setup() {
     createCanvas(windowWidth, windowHeight);
     // put setup code here
     frameRate(60);
+    noSmooth();
+    noStroke();
     background(0);
     game = null;
 }

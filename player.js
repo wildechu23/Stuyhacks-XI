@@ -32,7 +32,9 @@
         //}
       }*/
       if (canMovex == true) {
-        this.x += this.dx * this.speed;
+        if(this.dx < 0 && this.x > ((windowWidth*0.25)-(this.animation.width/2)) || this.dx > 0 && this.x < ((windowWidth*0.75)-(this.animation.width/2))) {
+          this.x += this.dx * this.speed;
+        }
       }
       if (canMovey == true) {
         this.y += this.dy * this.speed;
