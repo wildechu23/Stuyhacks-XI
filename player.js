@@ -61,8 +61,12 @@
       if (s) this.dy = 1;
     }
     released(w, a, s, d) { 
-      if (a) this.dx = 0;
-      if (d) this.dx = 0;
+      if (a) {
+        if(!keyIsDown(68)) this.dx = 0;
+      }
+      if (d) {
+        if(!keyIsDown(65)) this.dx = 0;
+      }
       if (w) this.dy = 0;
       if (s) this.dy = 0;
     }
