@@ -27,7 +27,7 @@ class Game{
 
         push();
         translate(this.offset*this.player.speed, 0);
-        this.drawBackground();
+        this.drawBuildings();
         pop();
         
 
@@ -54,10 +54,12 @@ class Game{
         this.player.move();
     }
 
-    drawBackground() {
+    drawBuildings() {
         for(let i = 0; i < 20; i++) {
             fill(this.buildings[i].color)
-            rect(96*i, windowHeight*0.75, 96, -(this.buildings[i].height));
+            rect(96*i + 96 * -40 *(Math.floor((this.offset+240)/480)), windowHeight*0.75, 96, -(this.buildings[i].height));
+            // fill(255,0,0);
+            rect(96*(i-20) + 96 * -40 *(Math.floor(this.offset/480)) , windowHeight*0.75, 96, -(this.buildings[i].height));
         }
     }
 
