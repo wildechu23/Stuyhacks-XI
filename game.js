@@ -16,6 +16,7 @@ class Game{
     }
 
     draw() {
+        
         if(this.player.dx < 0 && this.player.x <= windowWidth*0.25-this.player.animation.width/2) {
             this.offset++;
         } else if(this.player.dx > 0 && this.player.x >= windowWidth*0.75-this.player.animation.width/2) {
@@ -28,6 +29,13 @@ class Game{
         push();
         translate(this.offset*this.player.speed, 0);
         this.drawBuildings();
+        //draw floor
+        
+        for(let i = 0; i < 20; i++) {
+            fill(128);
+            rect(96*i + 96 * -40 *(Math.floor((this.offset+240)/480)), windowHeight*0.75, 96, windowHeight*0.25);
+            rect(96*(i-20) + 96 * -40 *(Math.floor(this.offset/480)) , windowHeight*0.75, 96, windowHeight*0.25);
+        }
         pop();
         
 
@@ -43,6 +51,8 @@ class Game{
     }
 
     update() {
+        this.player.move();
+        this.collision();
         this.player.update();
         for(enemy in this.enemies) {
             enemy.update();
@@ -50,8 +60,10 @@ class Game{
         for(proj in this.projectiles) {
             proj.update();
         }
-        this.player.update();
-        this.player.move();
+    }
+
+    collision() {
+        this.player.collision();
     }
 
     drawBuildings() {
